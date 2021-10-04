@@ -1,24 +1,24 @@
-# 2.  Use Modular Monolith System Architecture
+# 2. Используйте Модульную Монолитную Системную Архитектуру
 
-Date: 2019-07-01
+Дата: 2019-07-01
 
-Log date: 2019-10-28
+Дата регистрации: 2019-10-28
 
-## Status
+## Статус
 
-Accepted
+Принято
 
-## Context
+## Контекст
 
-An advanced example of Modular Monolith architecture and tactical DDD implementation in .NET is missing on the internet.
+В Интернете отсутствует передовой пример модульной монолитной архитектуры и тактической реализации DDD в .NET.
 
-## Decision
+## Решение
 
-I decided to create nontrivial application using Modular Monolith architecture and Domain-Driven Design tactical patterns.
+Я решил создать нетривиальное приложение, используя модульную монолитную архитектуру и тактические шаблоны проектирования, ориентированные на предметную область.
 
-## Consequences
+## Последствия
 
-- All modules must run in one single process as single application (Monolith)
-- All modules should have maximum autonomy (Modular)
-- DDD Bounded Contexts will be used to divide monolith into modules
-- DDD tactical patterns will be used to implement most of modules
+- Все модули должны выполняться в одном процессе как единое приложение (монолит)
+- Все модули должны иметь максимальную автономность (модульную)
+- Ограниченные контексты DDD будут использоваться для разделения монолита на модули
+- Тактические шаблоны DDD будут использоваться для реализации большинства модулей
