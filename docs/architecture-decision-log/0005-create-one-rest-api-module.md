@@ -1,45 +1,45 @@
-# 5.   Create one REST API module
+# 5. Создайте один модуль REST API
 
-Date: 2019-07-01
+Дата: 2019-07-01
 
-Log date: 2019-11-04
+Дата регистрации: 2019-11-04
 
-## Status
+## Статус
 
-Accepted
+Принято
 
-## Context
+## Контекст
 
-We need to expose the API of our application to the outside world. For now, we expect one client of our application - FrontEnd SPA application.
+Нам нужно предоставить API нашего приложения внешнему миру. На данный момент мы ожидаем одного клиента нашего приложения - приложения FrontEnd SPA.
 
-## Possible solutions
-1. Create one .NET Core MVC host application which contains all endpoints. This host application will have references to all business modules and communicates with them directly:</br>
+## Возможные решения
+1. Создайте одно хост-приложение .NET Core MVC, которое содержит все конечные точки. Это хост-приложение будет иметь ссылки на все бизнес-модули и напрямую связывается с ними:</br>
 
-Host/API references:</br>
-Administration module</br>
-Meetings module</br>
-Payments module</br>
-User Access module</br>
+Ссылки на хост/API:</br>
+Модуль администрирования</br>
+Модуль встреч</br>
+Модуль платежей</br>
+Модуль доступа пользователя</br>
 
-2. Create one .NET Core MVC host application and multiple APIs projects per module. Each API project should have endpoints which are handled by particular business module:</br> 
+2. Создайте одно хост-приложение .NET Core MVC и несколько проектов API для каждого модуля. Каждый проект API должен иметь конечные точки, которые обрабатываются определенным бизнес-модулем:</br>
 
-Host references:</br>
-Administration API references Administration module</br>
-Meetings API references Meetings module</br>
-Payments API references Payments module</br>
-User Access API references User Access module</br>
+Ссылки на хост:</br>
+Ссылки на API администрирования Модуль администрирования</br>
+Встречи Ссылки на API Модуль встреч</br>
+API платежей ссылается на модуль платежей</br>
+API доступа пользователей ссылается на Модуль доступа пользователей</br>
 
-## Decision
+## Решение
 
-Solution 1.
+Решение 1.
 
-Creating separate API projects for each module will add complexity and little value. Grouping endpoints for a particular business module in a special directory is enough. Another layer on top of the module is unnecessary.
+Создание отдельных проектов API для каждого модуля добавит сложности и небольшой ценности. Достаточно сгруппировать конечные точки для конкретного бизнес-модуля в специальном каталоге. Еще один слой поверх модуля не нужен.
 
-## Consequences
-- We will have only one API layer/module
-- Each controller has responsibility to delegate Command/Query processing to appropriate module
-- We don't need to scan other projects than host for controllers, routes and other MVC mechanisms
-- API configuration is easier
-- Overall complexity of API layer is lower
-- Complexity of each controller is a little bit higher
-- Build time will be shorter (less projects)
+## Последствия
+- У нас будет только один уровень/ модуль API
+- Каждый контроллер несет ответственность за делегирование обработки команд/запросов соответствующему модулю
+- Нам не нужно сканировать другие проекты, кроме хоста, на наличие контроллеров, маршрутов и других механизмов MVC
+- Настройка API проще
+- Общая сложность уровня API ниже
+- Сложность каждого контроллера немного выше
+- Время сборки будет короче (меньше проектов)
