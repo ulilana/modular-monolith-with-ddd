@@ -1,21 +1,21 @@
-# 1.  Record architecture decisions
+# 1. Запись архитектурных решений
 
-Date: 2019-10-28
+Дата проведения: 2019-10-28
 
-## Status
+## Статус
 
-Accepted
+Принято
 
-## Context
+## Контекст
 
-As the project is an example of a more advanced monolith architecture, it is necessary to save all architectural decisions in one place.
+Поскольку проект является примером более продвинутой монолитной архитектуры, необходимо сохранить все архитектурные решения в одном месте.
 
-## Decision
+## Решение
 
-For all architectural decisions Architecture Decision Log (ADL) is created. All decisions will be recorded as Architecture Decision Records (ADR). 
+Для всех архитектурных решений создается Журнал архитектурных решений (ADL). Все решения будут записаны в виде Записей об архитектурных решениях (ADR).
 
-Each ADR will be recorded using [Michael Nygard template](http://thinkrelevance.com/blog/2011/11/15/documenting-architecture-decisions), which contains following sections: Status, Context, Decision and Consequences.
+Каждое ДОПОГ будет записываться с использованием [шаблона Майкла Найгарда](http://thinkrelevance.com/blog/2011/11/15/documenting-architecture-decisions ), который содержит следующие разделы: Статус, Контекст, Решение и последствия.
 
-## Consequences
+## Последствия
 
-All architectural decisions should be recorded in log. Old decisions should be recorded as well with an approximate decision date. New decisions should be recorded on a regular basis.
+Все архитектурные решения должны быть занесены в журнал. Старые решения также должны быть записаны с приблизительной датой принятия решения. Новые решения должны регистрироваться на регулярной основе.
