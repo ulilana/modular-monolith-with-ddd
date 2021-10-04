@@ -1,26 +1,25 @@
-# 3.  Use .NET Core and C# language
+# 3. Используйте .NET Core и язык C#
 
-Date: 2019-07-01
+Дата: 2019-07-01
 
-Log date: 2019-10-28
+Дата регистрации: 2019-10-28
 
-## Status
+## Статус
 
-Accepted
+Принято
 
-## Context
+## Контекст
 
-As it is monolith, only one language (or platform) must be selected for implementation.
+Поскольку это монолит, для реализации должен быть выбран только один язык (или платформа).
 
-## Decision
+## Решение
 
-I decided to use:
+Я решил использовать:
 
-- .NET Core platform - it is new generation multi-platform, fully supported by Microsoft and open-source community, optimized and designed to replace old .NET Framework
-- C# language - most popuplar language in .NET ecosystem, I have 12 years commercial experience
-- F# will not be used, I don't have commercial experience with it
+- Платформа .NET Core - это мультиплатформенная платформа нового поколения, полностью поддерживаемая корпорацией Майкрософт и сообществом с открытым исходным кодом, оптимизированная и предназначенная для замены старой платформы .NET Framework
+- - Язык C# - самый популярный язык в экосистеме .NET, у меня 12-летний коммерческий опыт
+- F # не будет использоваться, у меня нет коммерческого опыта работы с ним
 
-## Consequences
+## Последствия
 
-- Whole application will be implemented in C# object-oriented language in .NET Core framework
-- .NET Core applications can be executed on Windows, MacOS, Linux
+- Все приложение будет реализовано на объектно-ориентированном языке C# в .NET Core 
