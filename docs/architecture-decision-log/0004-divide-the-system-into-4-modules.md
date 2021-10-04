@@ -1,40 +1,40 @@
-# 4.   Divide the system into 4 modules 
+# 4. Разделите систему на 4 модуля
 
-Date: 2019-07-01
+Дата: 2019-07-01
 
-Log date: 2019-11-02
+Дата регистрации: 2019-11-02
 
-## Status
+## Статус
 
-Accepted
+Принято
 
-## Context
+## Контекст
 
-The MyMeetings domain contains 4 main subdomains: Meetings (core domain), Administration (supporting subdomain), Payments (supporting subdomain) and User Access (generic domain).
+Домен MyMeetings содержит 4 основных поддомена: Собрания (основной домен), Администрирование (вспомогательный поддомен), Платежи (вспомогательный поддомен) и Доступ пользователей (общий домен).
 
-We use Modular Monolith architecture so we need to implement one application which solves all requirements from all domains listed above.
+Мы используем модульную монолитную архитектуру, поэтому нам необходимо реализовать одно приложение, которое удовлетворяет всем требованиям из всех перечисленных выше доменов.
 
-We need to modularize our system.
+Нам нужно модульизировать нашу систему.
 
-## Possible solutions
-1. Create one "MyMeetings" module and divide it into sub-modules. This solution is simpler to implement at the beginning. We do not have to set module boundaries and think how to communicate between them. On the other hand, this causes a lack of autonomy and can lead to Big Ball Of Mud anti-pattern.
-2. Create 4 modules based on Bounded Contexts which in this scenario maps 1:1 to domains. This solution is more difficult at the beginning. We need to set modules boundaries, communication strategy between modules and have more advanced infrastructure code. It is a more complex solution. On the other hand, it supports autonomy, maintainability, readability. We can develop our Domain Models in all of the Bounded Contexts independently.
+## Возможные решения
+1. Создайте один модуль "Mymeetings" и разделите его на подмодули. Это решение проще реализовать в самом начале. Нам не нужно устанавливать границы модулей и думать, как взаимодействовать между ними. С другой стороны, это приводит к отсутствию автономии и может привести к образованию Большого комка грязи против рисунка.
+2. Создайте 4 модуля на основе ограниченных контекстов, которые в этом сценарии сопоставляются доменам 1:1. Это решение сложнее в начале. Нам нужно установить границы модулей, стратегию связи между модулями и иметь более продвинутый код инфраструктуры. Это более сложное решение. С другой стороны, он поддерживает автономность, ремонтопригодность, удобочитаемость. Мы можем разрабатывать наши модели предметной области во всех Ограниченных контекстах независимо.
 
-## Decision
+## Решение
 
-Solution 2.
+Решение 2.
 
-We created 4 modules: Meetings, Administration, Payments, User Access. The key factor here is module autonomy and maintainability. We want to develop each module independently. This is more cleaner solution. It involves more work at the beginning but we want to invest.
+Мы создали 4 модуля: Встречи, Администрирование, Платежи, Доступ пользователей. Ключевым фактором здесь является автономность модуля и ремонтопригодность. Мы хотим разработать каждый модуль самостоятельно. Это более чистое решение. Это требует больше работы в начале, но мы хотим инвестировать.
 
-## Consequences
-- We can implement each module/Bounded Context independently.
-- We need to set clear boundaries between modules and communication strategy between modules (and implement them)
-- We need to define the API of each module
-- The API/GUI layer needs to know about all of the modules
-- We need to create shared libraries/classes to limit boilerplate code which will be the same in all modules
-- Complexity of the whole solution will increase
-- Complexity of each module will decrease
-- We will have clear separation of concerns
-- In addition to the application, we must divide the data
-- We will have business concepts modeled in a proper way - without "godclasses" which do everything
-- We can delegate development of particular module to defined team, work should be done without any conflicts on codebase
+## Последствия
+- Мы можем реализовать каждый модуль / ограниченный контекст независимо.
+- Нам нужно установить четкие границы между модулями и стратегию коммуникации между модулями (и реализовать их)
+- Нам нужно определить API каждого модуля
+- Уровень API/ GUI должен знать обо всех модулях
+- Нам нужно создать общие библиотеки / классы, чтобы ограничить шаблонный код, который будет одинаковым во всех модулях
+- Сложность всего решения возрастет
+- Сложность каждого модуля будет уменьшаться
+- У нас будет четкое разделение проблем
+- В дополнение к приложению мы должны разделить данные
+- У нас будут бизнес-концепции, смоделированные надлежащим образом - без "божественных классов", которые делают все
+- Мы можем делегировать разработку конкретного модуля определенной команде, работа должна выполняться без каких-либо конфликтов в кодовой базе
